@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Yummy Blog - Food Blog Template</title>
+    <title>Dave's Place</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -117,6 +117,7 @@
 
     <!-- ****** Single Blog Area Start ****** -->
     <section class="single_blog_area section_padding_80">
+        <p style="position: absolute; transform: translate(350px,-60px);"><b style="color: orange;">Origins:</b> Nalesniki is a dish home to Poland that is eaten in variety of ways both sweet and savory.<i style="font-size: 12px"><br>Source: https://www.tasteatlas.com/</i></p>
         <div class="container" style="float:left;">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
@@ -129,39 +130,110 @@
                                     <img src="img/Nalesniki.png" alt="" width="1000px">
                                     <li style="transform: translate(270px,-15px);"> Recipe: </li>
                                 </div>
-                                    <ul class="mb-30">
-                                    	<li> Mix eggs, flour, milk, sugar, salt, and carbonated water in a bowl.</li>
-                     				   <li>Let mixture rest for 20 minutes.</li>
-                     				   <li>Fry mixture in butter. When the batter starts to crisp on one side (1-2 mins) flip it over. Once this happens on both sides, unload the nalesniki onto a plate.</li>
-                    				    <li>Serve warm with jam (optional)</li>
+                                    <ul class="mb-30" style="white-space: pre-wrap; transform: translate(0,10px);" id="recipe">
+                                        <li> Mix eggs, flour, milk, sugar, salt, and carbonated water in a bowl.</li><li>Let mixture rest for 20 minutes.</li><li>Fry mixture in butter. When the batter starts to crisp on one side (1-2 mins) flip it over. Once this happens on both sides, unload the nalesniki onto a plate.</li><li>Serve warm with jam (optional)</li>
                                     </ul>
                                 </div>
+
+                                <div style="position: absolute; transform: translate(80px, -250px); visibility: hidden;">
+                                    <form>
+                                        <textarea name="message" cols="65" rows="9" id ="hiddenRecipe">
+Mix eggs, flour, milk, sugar, salt, and carbonated water in a bowl.
+
+Let mixture rest for 20 minutes.
+
+Fry mixture in butter. When the batter starts to crisp on one side (1-2 mins) flip it over. Once this happens on both sides, unload the nalesniki onto a plate.
+
+Serve warm with jam (optional)
+                                        </textarea>
+                                    </form>
+                                    <button id ="hiddenRecipeBTN" onclick= update()>Done</button>
+                                </div>
+
+                                <div style="position: absolute; transform: translate(770px, -520px); visibility: hidden;">
+                                    <form>
+                                        <textarea name="message" cols="40" rows="8" id ="hiddenIngredients">
+1 cup flour
+3 eggs
+1 cup milk
+1/2 cup carbonated water
+A pinch of salt
+1 tbs sugar
+2 tbs melted butter
+Jam
+                                        </textarea>
+                                    </form>
+                                    <button id ="hiddenIngredientsBTN" onclick= update()>Done</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ****** Ingredients ****** -->
-                	<h2 style="position: absolute; transform: translate(1040px,-680px);"> Time to Cook: </h2>
-                	<h3 style="position: absolute; transform: translate(1100px,-630px);"> 35 mins</h3>
-                	<li style="position: absolute; transform: translate(1100px,-540px);"> Ingredients: </li>
-              		<ul class="mb-30" style="position: absolute; transform: translate(930px,-500px);">
-                        <li>1 cup flour</li>
-                        <li>3 eggs</li>
-                        <li>1 cup milk</li>
-                        <li>1/2 cup carbonated water</li>
+                	<h2 style="position: absolute; transform: translate(1040px,-740px);"> Time to Cook: </h2>
+                	<h3 style="position: absolute; transform: translate(1100px,-690px);"> 35 mins</h3>
+                	<li style="position: absolute; transform: translate(1100px,-590px);"> Ingredients: </li>
+              		<ul class="mb-30" style="position: absolute; transform: translate(930px,-550px); white-space: pre-wrap;" id="ingredients">
+                        <li>1 cup flour</li><li>3 eggs</li><li>1 cup milk</li><li>1/2 cup carbonated water</li>
                      </ul>
-                     <ul class="mb-30" style="position: absolute; transform: translate(1180px,-500px);">
-                        <li>A pinch of salt</li>
-                        <li>1 tbs sugar</li>
-                        <li>2 tbs melted butter</li>
-                        <li>Jam</li>
+                     <ul class="mb-30" style="position: absolute; transform: translate(1180px,-550px); white-space: pre-wrap;" id="ingredients2">
+                        <li>A pinch of salt</li><li>1 tbs sugar</li><li>2 tbs melted butter</li><li>Jam</li>
                      </ul>
 
                     <h3 style="transform: translate(1080px,-300px);"> Tutorial </h3>
                     <iframe width="520" height="315" style="position: absolute; transform: translate(870px,-260px); border-radius: 20px;" src="https://www.youtube.com/embed/SA5hozL1OT0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+
+            <div>
+                 <button style="color: darkorange; font-size: 30px; width: 1450px; transform: translate(-10px,70px); padding: 10px; font-weight: bold; cursor: pointer;" onclick = editRecipe()>Edit&nbsp;&nbsp;Recipe&nbsp;&nbsp;and&nbsp;&nbsp;Ingredients </button>
+            </div>
         </div>
+
+        <script type="text/javascript">
+        function editRecipe(){
+            document.getElementById("recipe").style.visibility = "hidden";
+            document.getElementById("hiddenIngredients").style.visibility = "visible";
+            document.getElementById("hiddenIngredientsBTN").style.visibility = "visible";
+            document.getElementById("hiddenRecipe").style.visibility = "visible";
+            document.getElementById("hiddenRecipeBTN").style.visibility = "visible";
+            document.getElementById("ingredients").style.visibility = "hidden";
+            document.getElementById("ingredients2").style.visibility = "hidden";
+        }
+
+        function update(){
+            document.getElementById("ingredients").style.visibility = "visible";
+            document.getElementById("ingredients").innerHTML = "";
+
+            newIngredients = document.getElementById("hiddenIngredients").value;
+            var post = document.createElement('p');
+            post.append(newIngredients);
+
+            var text = document.createElement('div');
+            text.append(post);
+
+            document.getElementById("ingredients").prepend(text)
+            document.getElementById("hiddenIngredients").style.visibility = "hidden";
+            document.getElementById("hiddenIngredientsBTN").style.visibility = "hidden";
+
+            document.getElementById("recipe").style.visibility = "visible";
+            document.getElementById("recipe").innerHTML = "";
+
+            newRecipe = document.getElementById("hiddenRecipe").value;
+            var instructions = document.createElement('p');
+            instructions.append(newRecipe);
+
+            var add = document.createElement('div');
+            add.append(instructions);
+
+            document.getElementById("recipe").prepend(add)
+            document.getElementById("hiddenRecipe").style.visibility = "hidden";
+            document.getElementById("hiddenRecipeBTN").style.visibility = "hidden";
+        };
+
+
+    </script>
     </section>
     <!-- ****** Single Blog Area End ****** -->
     

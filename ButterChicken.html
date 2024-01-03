@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Yummy Blog - Food Blog Template</title>
+    <title>Dave's Place</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -118,6 +118,7 @@
 
     <!-- ****** Single Blog Area Start ****** -->
     <section class="single_blog_area section_padding_80">
+        <p style="position: absolute; transform: translate(20px,-60px);"><b style="color: orange;">Origins: </b>Butter Chicken originated in Delhi, a city in North India. It was first shared with the world in the 1950s when a restaurant named "Moti Mahal" was opened by worldclass <br>chef Kundan Lal Gujral. <i style="font-size: 12px"> Source: https://www.tasteatlas.com/</i></p>
         <div class="container" style="float:left;">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
@@ -130,38 +131,72 @@
                                     <img src="img/butterC.png" alt="" width="1000px">
                                     <li style="transform: translate(270px,-15px);"> Recipe: </li>
                                 </div>
-                                    <ul class="mb-30">
-                                    	<li>Cut the chicken into bite sized pieces. Marinate chicken in chilli, ginger paste, garlic, and salt.</li>
-                     				   <li>Chop tomatoes into bite size pieces. Chop onion.</li>
-                     				   <li>Fry the chicken for 8 minutes until cooked through and set aside. We are now ready to create the sauce.</li>
-                    				    <li>Fry the onions in butter until translucent. </li>
-                 				       <li>Then add tomatoes, and fry for another couple minutes until the mixture softens. </li>
-              				          <li>Add cashews, water, sugar, salt, chilli powder, garam masala, and garlic. Continue to sauté for 15 minutes until the mixture becomes stewy.</li>
-                       				 <li>Blend the mixture with a hand blender until it turns into a smooth paste.</li>
-                                     <li> Pass the sauce through a sieve to catch any large pieces, and then mix the chicken in with the smooth sauce. </li>
-                       				<li>The butter chicken is ready to serve when warm. </li>
+                                    <ul class="mb-30" style="white-space: pre-wrap;" id="recipe">
+                                    	<li>Cut the chicken into bite sized pieces. Marinate chicken in chilli, ginger paste, garlic, and salt.</li><li>Chop tomatoes into bite size pieces. Chop onion.</li><li>Fry the chicken for 8 minutes until cooked through and set aside. We are now ready to create the sauce.</li><li>Fry the onions in butter until translucent. </li><li>Then add tomatoes, and fry for another couple minutes until the mixture softens. </li><li>Add cashews, water, sugar, salt, chilli powder, garam masala, and garlic. Continue to sauté for 15 minutes until the mixture becomes stewy.</li><li>Blend the mixture with a hand blender until it turns into a smooth paste.</li><li> Pass the sauce through a sieve to catch any large pieces, and then mix the chicken in with the smooth sauce. </li><li>The butter chicken is ready to serve when warm. </li>
                                     </ul>
                                 </div>
+
+                                 <div style="position: absolute; transform: translate(-150px, -550px); visibility: hidden;">
+                                    <form>
+                                        <textarea name="message" cols="95" rows="19" id ="hiddenRecipe">
+Cut the chicken into bite sized pieces. Marinate chicken in chilli, ginger paste, garlic, and salt.
+
+Chop tomatoes into bite size pieces. Chop onion.
+
+Fry the chicken for 8 minutes until cooked through and set aside. We are now ready to create the sauce.
+
+Fry the onions in butter until translucent. 
+
+Then add tomatoes, and fry for another couple minutes until the mixture softens. 
+
+Add cashews, water, sugar, salt, chilli powder, garam masala, and garlic. Continue to sauté for 15 minutes until the mixture becomes stewy.
+
+Blend the mixture with a hand blender until it turns into a smooth paste.
+
+Pass the sauce through a sieve to catch any large pieces, and then mix the chicken in with the smooth sauce. 
+
+The butter chicken is ready to serve when warm.
+                                        </textarea>
+                                    </form>
+                                    <button id ="hiddenRecipeBTN" onclick= update()>Done</button>
+                                </div>
+
+                                <div style="position: absolute; transform: translate(750px, -960px); visibility: hidden;">
+                                    <form>
+                                        <textarea name="message" cols="30" rows="17" id ="hiddenIngredients">
+3 chicken breasts
+1 tbs chilli powder
+1 tsp ginger paste
+1 tsp garlic
+1 tsp salt
+4 tomatoes
+1 large onion
+1 tbs oil for frying
+1 tbs butter
+1/4 cup cashews
+5 tbs water
+1 tbs sugar
+1 tsp salt
+1 tsp chili powder
+1 clove crushed garlic
+1 tsp garam masala
+                                        </textarea>
+                                    </form>
+                                    <button id ="hiddenIngredientsBTN" onclick= update()>Done</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ****** Ingredients ****** -->
-                	<h2 style="position: absolute; transform: translate(1040px,-1100px);"> Time to Cook: </h2>
-                	<h3 style="position: absolute; transform: translate(1100px,-1050px);"> 30 mins </h3>
-                	<li style="position: absolute; transform: translate(1100px,-960px);"> Ingredients: </li>
-              		<ul class="mb-30" style="position: absolute; transform: translate(940px,-920px);">
-                        <li>3 chicken breasts</li>
-                        <li>1 tbs chilli powder</li>
-                        <li>1 tsp ginger paste</li>
-                        <li>1 tsp garlic</li>
-                        <li>1 tsp salt</li>
-                        <li>4 tomatoes</li>
-                        <li>1 large onion</li>
-                        <li>1 tbs oil for frying</li>
+                	<h2 style="position: absolute; transform: translate(1040px,-1250px);"> Time to Cook: </h2>
+                	<h3 style="position: absolute; transform: translate(1100px,-1175px);"> 30 mins </h3>
+                	<li style="position: absolute; transform: translate(1100px,-1010px);"> Ingredients: </li>
+              		<ul class="mb-30" style="position: absolute; transform: translate(940px,-960px); white-space: pre-wrap;" id="ingredients"><li>3 chicken breasts</li><li>1 tbs chilli powder</li><li>1 tsp ginger paste</li><li>1 tsp garlic</li><li>1 tsp salt</li><li>4 tomatoes</li><li>1 large onion</li><li>1 tbs oil for frying</li>
                      </ul>
-                     <ul class="mb-30" style="position: absolute; transform: translate(1190px,-920px);">
+                     <ul class="mb-30" style="position: absolute; transform: translate(1190px,-960px);" id="ingredients2">
                         <li>1 tbs butter</li>
                         <li>1/4 cup cashews</li>
                         <li>5 tbs water</li>
@@ -174,9 +209,55 @@
 
                     <h3 style="transform: translate(1080px,-460px);"> Tutorial </h3>
                     <iframe width="520" height="315" style="position: absolute; transform: translate(870px,-440px); border-radius: 20px;" src="https://www.youtube.com/embed/o3riM1RhsPA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                     <button style="color: darkorange; font-size: 30px; width: 1450px; transform: translate(-20px,-50px); padding: 10px; font-weight: bold; cursor: pointer;" onclick = editRecipe()>Edit&nbsp;&nbsp;Recipe&nbsp;&nbsp;and&nbsp;&nbsp;Ingredients </button>
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        function editRecipe(){
+            document.getElementById("hiddenIngredients").style.visibility = "visible";
+            document.getElementById("hiddenIngredientsBTN").style.visibility = "visible";
+            document.getElementById("hiddenRecipe").style.visibility = "visible";
+            document.getElementById("hiddenRecipeBTN").style.visibility = "visible";
+            document.getElementById("ingredients").style.visibility = "hidden";
+            document.getElementById("ingredients2").style.visibility = "hidden";
+            document.getElementById("recipe").style.visibility = "hidden";
+        }
+
+        function update(){
+            document.getElementById("ingredients").style.visibility = "visible";
+            document.getElementById("ingredients").innerHTML = "";
+
+            newIngredients = document.getElementById("hiddenIngredients").value;
+            var post = document.createElement('p');
+            post.append(newIngredients);
+
+            var text = document.createElement('div');
+            text.append(post);
+
+            document.getElementById("ingredients").prepend(text)
+            document.getElementById("hiddenIngredients").style.visibility = "hidden";
+            document.getElementById("hiddenIngredientsBTN").style.visibility = "hidden";
+
+            document.getElementById("recipe").style.visibility = "visible";
+            document.getElementById("recipe").innerHTML = "";
+
+            newRecipe = document.getElementById("hiddenRecipe").value;
+            var instructions = document.createElement('p');
+            instructions.append(newRecipe);
+
+            var add = document.createElement('div');
+            add.append(instructions);
+
+            document.getElementById("recipe").prepend(add)
+            document.getElementById("hiddenRecipe").style.visibility = "hidden";
+            document.getElementById("hiddenRecipeBTN").style.visibility = "hidden";
+        }
+
+
+    </script>
     <!-- ****** Single Blog Area End ****** -->
     
 

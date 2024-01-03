@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Yummy Blog - Food Blog Template</title>
+    <title>Dave's Place</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -118,6 +118,7 @@
 
     <!-- ****** Single Blog Area Start ****** -->
     <section class="single_blog_area section_padding_80">
+        <p style="position: absolute; transform: translate(50px,-60px);"><b style="color: orange;">Origins: </b> This dish originally came from Vienna in Austria in the 1900s. It was supposedly invested by field marshal Josef Radetzky, but no one really knows its true origins. <i style="font-size: 12px"><br> Source: https://www.tasteatlas.com/</i></p>
         <div class="container" style="float:left;">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
@@ -130,13 +131,40 @@
                                     <img src="img/shnitzel.png" alt="" width="1000px">
                                     <li style="transform: translate(270px,-15px);"> Recipe: </li>
                                 </div>
-                                    <ul class="mb-30">
-                                    	<li>Sprinkle cutlets lightly with salt and pepper</li>
-                     				   <li>Spread flour in a shallow dish. Place beaten eggs in a shallow bowl and bread crumbs in another shallow bowl.</li>
-                     				   <li>Dip both sides of each cutlet in flour, then dip floured cutlet in beaten egg. Then dip both sides of each cutlet in bread crumbs, pressing bread crumbs evenly onto cutlet.</li>
-                    				    <li>Place frying pan over medium heat on stove and heat oil or butter.  Add the cutlets to the pan. Cook until both sides are golden brown.</li>
-                 				       <li>Serve plain or with one or more toppings, such as: Chopped parsley, Caramelized onions, or Cheese.</li>
+                                    <ul class="mb-30"  id="recipe" style="white-space: pre-wrap;">
+                                    	<li>Sprinkle cutlets lightly with salt and pepper.</li><li>Spread flour in a shallow dish. Place beaten eggs in a shallow bowl and bread crumbs in another shallow bowl.</li><li>Dip both sides of each cutlet in flour, then dip floured cutlet in beaten egg. Then dip both sides of each cutlet in bread crumbs, pressing bread crumbs evenly onto cutlet.</li><li>Place frying pan over medium heat on stove and heat oil or butter.  Add the cutlets to the pan. Cook until both sides are golden brown.</li><li>Serve plain or with one or more toppings, such as: Chopped parsley, Caramelized onions, or Cheese.</li>
                                     </ul>
+                                </div>
+
+                                <div style="position: absolute; transform: translate(-150px, -400px); visibility: hidden;">
+                                    <form>
+                                        <textarea name="message" cols="95" rows="14" id ="hiddenRecipe">
+Sprinkle cutlets lightly with salt and pepper.
+
+Spread flour in a shallow dish. Place beaten eggs in a shallow bowl and bread crumbs in another shallow bowl.
+
+Dip both sides of each cutlet in flour, then dip floured cutlet in beaten egg. Then dip both sides of each cutlet in bread crumbs, pressing bread crumbs evenly onto cutlet.
+
+Place frying pan over medium heat on stove and heat oil or butter.  Add the cutlets to the pan. Cook until both sides are golden brown.
+
+Serve plain or with one or more toppings, such as: Chopped parsley, Caramelized onions, or Cheese.
+                                        </textarea>
+                                    </form>
+                                    <button id ="hiddenRecipeBTN" onclick= update()>Done</button>
+                                </div>
+
+                                <div style="position: absolute; transform: translate(750px, -700px); visibility: hidden;">
+                                    <form>
+                                        <textarea name="message" cols="40" rows="8" id ="hiddenIngredients">
+4 veal, chicken or turkey cutlets
+3 eggs, lightly beaten
+2 cups dry bread crumbs
+1/3 cup white flour
+2 tbsp vegetable oil or butter
+Salt and pepper
+                                        </textarea>
+                                    </form>
+                                    <button id ="hiddenIngredientsBTN" onclick= update()>Done</button>
                                 </div>
                             </div>
                         </div>
@@ -144,23 +172,64 @@
                 </div>
 
                 <!-- ****** Ingredients ****** -->
-                	<h2 style="position: absolute; transform: translate(1040px,-930px);"> Time to Cook: </h2>
-                	<h3 style="position: absolute; transform: translate(1100px,-880px);"> 15 Mins</h3>
-                	<li style="position: absolute; transform: translate(1100px,-790px);"> Ingredients: </li>
-              		<ul class="mb-30" style="position: absolute; transform: translate(950px,-750px);">
-                        <li>4 veal, chicken or turkey cutlets<br>(approx 3 mm thick) </li>
-                        <li>3 eggs, lightly beaten</li>
-                        <li>2 cups dry bread crumbs</li>
-                        <li>1/3 cup white flour</li>
-                        <li>2 tbsp vegetable oil or butter</li>
-                        <li>Salt and pepper</li>
+                	<h2 style="position: absolute; transform: translate(1040px,-980px);"> Time to Cook: </h2>
+                	<h3 style="position: absolute; transform: translate(1100px,-930px);"> 15 Mins</h3>
+                	<li style="position: absolute; transform: translate(1100px,-800px);"> Ingredients: </li>
+              		<ul class="mb-30" style="position: absolute; transform: translate(950px,-750px); white-space: pre-wrap;" id="ingredients">
+                        <li>4 veal, chicken or turkey cutlets<br>(approx 3 mm thick) </li><li>3 eggs, lightly beaten</li><li>2 cups dry bread crumbs</li><li>1/3 cup white flour</li><li>2 tbsp vegetable oil or butter</li><li>Salt and pepper</li>
                      </ul>
 
                     <h3 style="transform: translate(1080px,-410px);"> Tutorial </h3>
                     <iframe width="520" height="315" style="position: absolute; transform: translate(870px,-390px); border-radius: 20px;" src="https://www.youtube.com/embed/0rvlqpUNxfA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                     <button style="color: darkorange; font-size: 30px; width: 1450px; transform: translate(-20px,-50px); padding: 10px; font-weight: bold; cursor: pointer;" onclick = editRecipe()>Edit&nbsp;&nbsp;Recipe&nbsp;&nbsp;and&nbsp;&nbsp;Ingredients </button>
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        function editRecipe(){
+            document.getElementById("recipe").style.visibility = "hidden";
+            document.getElementById("hiddenIngredients").style.visibility = "visible";
+            document.getElementById("hiddenIngredientsBTN").style.visibility = "visible";
+            document.getElementById("hiddenRecipe").style.visibility = "visible";
+            document.getElementById("hiddenRecipeBTN").style.visibility = "visible";
+            document.getElementById("ingredients").style.visibility = "hidden";
+            document.getElementById("ingredients2").style.visibility = "hidden";
+        }
+
+        function update(){
+            document.getElementById("ingredients").style.visibility = "visible";
+            document.getElementById("ingredients").innerHTML = "";
+
+            newIngredients = document.getElementById("hiddenIngredients").value;
+            var post = document.createElement('p');
+            post.append(newIngredients);
+
+            var text = document.createElement('div');
+            text.append(post);
+
+            document.getElementById("ingredients").prepend(text)
+            document.getElementById("hiddenIngredients").style.visibility = "hidden";
+            document.getElementById("hiddenIngredientsBTN").style.visibility = "hidden";
+
+            document.getElementById("recipe").style.visibility = "visible";
+            document.getElementById("recipe").innerHTML = "";
+
+            newRecipe = document.getElementById("hiddenRecipe").value;
+            var instructions = document.createElement('p');
+            instructions.append(newRecipe);
+
+            var add = document.createElement('div');
+            add.append(instructions);
+
+            document.getElementById("recipe").prepend(add)
+            document.getElementById("hiddenRecipe").style.visibility = "hidden";
+            document.getElementById("hiddenRecipeBTN").style.visibility = "hidden";
+        }
+
+
+    </script>
     <!-- ****** Single Blog Area End ****** -->
     
 
